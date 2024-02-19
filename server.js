@@ -7,6 +7,7 @@ const http = require('http');
 const miPrimerModulo = require('./miPrimeroModulo');
 const url = require('url');
 
+
 http.createServer( function (req, res){
 
     const saludo = miPrimerModulo.sayHello("Carolina")
@@ -15,6 +16,7 @@ http.createServer( function (req, res){
     const q = url.parse(req.url, true).query;
     const suma = miPrimerModulo.suma(parseFloat(q.num1), parseFloat(q.num2));
 
+    //res.write("<h1>"+ucs2.upperCase( saludo )+"</h1>");
     res.write("<h1>"+saludo+"</h1>");
     res.write(`<p>Esta es la informacion de la URL ${urlInfo} </p>`)
     res.write(`<p>Resultado de Sumas de Parametros ${suma} </p>`)
